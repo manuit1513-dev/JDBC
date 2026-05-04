@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"jcolonia.daw2025.world","l":"AccesoBDWorld"},{"l":"All Classes and Interfaces","u":"allclasses-index.html","k":"18"},{"p":"jcolonia.daw2025.world","l":"BuscarPaisConsola"},{"p":"jcolonia.daw2025.world","l":"BuscarPaisVentana"}];updateSearchResults();
