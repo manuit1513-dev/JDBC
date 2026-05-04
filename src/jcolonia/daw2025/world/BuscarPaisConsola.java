@@ -1,4 +1,4 @@
-package jcolonia.daw2025.JDBC;
+package jcolonia.daw2025.world;
 
 import java.util.List;
 import java.util.Scanner;

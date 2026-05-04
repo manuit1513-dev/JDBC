@@ -1,15 +1,16 @@
-package jcolonia.daw2025.JDBC;
+package jcolonia.daw2025.world;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AccesoBDWorld{
-	private static final String URL = "jdbc:sqlite:world.db";
+	private static final String URL = "jdbc:sqlite:world2025.db";
 
     public List<String> buscarPaises(String patron) throws SQLException {
         List<String> resultados = new ArrayList<>();
-        String sql = "SELECT Name FROM country WHERE Name LIKE ? ORDER BY Name";
+        String sql = "SELECT DISTINCT Name FROM 'Country' WHERE Name LIKE ? ORDER BY Name";
+
 
         try (Connection conn = DriverManager.getConnection(URL);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
