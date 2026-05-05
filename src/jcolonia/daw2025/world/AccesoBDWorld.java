@@ -24,8 +24,9 @@ public class AccesoBDWorld {
      * @return Una lista de cadenas {@link List} con los nombres de los países encontrados, 
      *         ordenados alfabéticamente.
      * @throws SQLException Si ocurre un error durante la conexión o la ejecución de la consulta SQL.
+     * @throws AccesoDatosException 
      */
-    public List<String> buscarPaises(String patron) throws SQLException {
+    public List<String> buscarPaises(String patron) throws SQLException, AccesoDatosException {
         List<String> resultados = new ArrayList<>();
         String sql = "SELECT DISTINCT Name FROM 'Country' WHERE Name LIKE ? ORDER BY Name";
 
@@ -38,7 +39,9 @@ public class AccesoBDWorld {
                     resultados.add(rs.getString("Name"));
                 }
             }
-        }
+        } catch (SQLException e) {
+            throw new AccesoDatosException("Error al consultar la base de datos World.", e);
+       }
         return resultados;
     }
 }
